@@ -88,11 +88,71 @@ nav.scrolled{box-shadow:0 2px 20px rgba(11,31,58,0.08)}
 .hero{min-height:100vh;display:grid;grid-template-columns:1fr 420px;padding-top:64px}
 .hero-left{
   padding:80px 64px;display:flex;flex-direction:column;justify-content:center;
-  border-right:1px solid var(--border);position:relative;
+  border-right:1px solid var(--border);position:relative;overflow:hidden;
 }
 .hero-left::before{
   content:'';position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(ellipse 55% 50% at 15% 55%,rgba(37,99,235,0.05) 0%,transparent 70%);
+  background:radial-gradient(ellipse 60% 55% at 20% 60%,rgba(37,99,235,0.07) 0%,transparent 65%),
+    radial-gradient(ellipse 40% 35% at 85% 15%,rgba(37,99,235,0.04) 0%,transparent 60%);
+}
+.hero-left::after{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(circle,rgba(37,99,235,0.12) 1px,transparent 1px);
+  background-size:28px 28px;
+  mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 30%,transparent 100%);
+  -webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 30%,transparent 100%);
+}
+.hero-deco{position:absolute;pointer-events:none;z-index:0}
+.hero-deco-ring{
+  width:320px;height:320px;border-radius:50%;
+  border:1px solid rgba(37,99,235,0.08);
+  top:-80px;right:-60px;
+}
+.hero-deco-ring2{
+  width:200px;height:200px;border-radius:50%;
+  border:1px solid rgba(37,99,235,0.06);
+  bottom:60px;left:-60px;
+}
+.hero-deco-line{
+  width:1px;height:120px;
+  background:linear-gradient(to bottom,transparent,rgba(37,99,235,0.15),transparent);
+  top:100px;right:160px;
+}
+.hero-deco-line2{
+  width:80px;height:1px;
+  background:linear-gradient(to right,transparent,rgba(37,99,235,0.15),transparent);
+  bottom:180px;left:64px;
+}
+.hero-float-tags{
+  position:absolute;top:0;left:0;right:0;bottom:0;
+  pointer-events:none;z-index:0;overflow:hidden;
+}
+.hft{
+  position:absolute;
+  background:rgba(255,255,255,0.9);
+  border:1px solid var(--border);
+  border-radius:8px;padding:7px 13px;
+  font-size:11px;font-weight:700;color:var(--muted);
+  letter-spacing:0.3px;
+  box-shadow:0 2px 12px rgba(11,31,58,0.06);
+  display:flex;align-items:center;gap:7px;
+  animation:floatTag 6s ease-in-out infinite;
+  white-space:nowrap;
+}
+.hft::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--blue-2);flex-shrink:0}
+.hft:nth-child(1){top:7%;left:8%;animation-delay:0s}
+.hft:nth-child(2){top:7%;right:8%;animation-delay:1.5s}
+.hft:nth-child(3){bottom:7%;left:8%;animation-delay:0.8s}
+.hft:nth-child(4){bottom:7%;right:8%;animation-delay:2.2s}
+.hft:nth-child(5){bottom:15%;left:50%;transform:translateX(-50%);animation-delay:1.2s}
+@keyframes floatTag{
+  0%,100%{transform:translateY(0px)}
+  50%{transform:translateY(-7px)}
+}
+.hft:nth-child(5){animation:floatTag5 6s ease-in-out infinite 1.2s}
+@keyframes floatTag5{
+  0%,100%{transform:translateX(-50%) translateY(0px)}
+  50%{transform:translateX(-50%) translateY(-7px)}
 }
 .hero-right{
   background:var(--navy);
@@ -115,6 +175,7 @@ nav.scrolled{box-shadow:0 2px 20px rgba(11,31,58,0.08)}
     linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);
   background-size:36px 36px;pointer-events:none;
 }
+.hero-left>*:not(.hero-deco):not(.hero-float-tags){position:relative;z-index:1}
 .avail-chip{
   display:inline-flex;align-items:center;gap:8px;
   background:#ECFDF5;border:1px solid #A7F3D0;color:#065F46;
@@ -415,6 +476,19 @@ footer p{font-size:12px;color:var(--light);font-weight:500}
 
 <div class="hero">
   <div class="hero-left">
+    <!-- Decorative elements -->
+    <div class="hero-deco hero-deco-ring"></div>
+    <div class="hero-deco hero-deco-ring2"></div>
+    <div class="hero-deco hero-deco-line"></div>
+    <div class="hero-deco hero-deco-line2"></div>
+    <div class="hero-float-tags">
+      <div class="hft">Vue.js + Laravel</div>
+      <div class="hft">Gov't Systems</div>
+      <div class="hft">RFID Integration</div>
+      <div class="hft">MySQL · SQL Server</div>
+      <div class="hft">.NET WinForms</div>
+    </div>
+    <!-- Content -->
     <div class="avail-chip"><span class="avail-dot"></span>Available for Remote &amp; Freelance Work</div>
     <h1 class="hero-h">Full-Stack<br>Web &amp; Desktop<br><em>Developer</em></h1>
     <p class="hero-sub">I build real-world enterprise systems — government platforms, medical management portals, RFID attendance systems, and more. Based in the Philippines, working worldwide.</p>
@@ -488,7 +562,7 @@ footer p{font-size:12px;color:var(--light);font-weight:500}
   <div class="about-layout">
     <div class="about-body">
       <p>I'm <strong>Yancy Pingal Liquiran</strong>, a Full-Stack Developer and IT Professional based in Surigao del Norte, Philippines. I hold a <strong>BS in Information Technology</strong> from Systems Technology Institute College and an <strong>NC II in Computer Systems Servicing</strong> from TESDA.</p>
-      <p>With over 3 years of hands-on practice, I have delivered <strong>4 government and enterprise systems</strong> — including a building permit fees assessment platform for LGU Claver, a legislative records management system, a full medical management portal with online booking (live at <em>saintpeterdiagnosticsandlaboratory.com</em>), and an RFID-powered school attendance system currently in production.</p>
+      <p>With over 3 years of hands-on practice, I have delivered <strong>3 government and enterprise systems</strong> — including a building permit fees assessment platform for LGU Claver, a legislative records management system, a full medical management portal with online booking (live at <em>saintpeterdiagnosticsandlaboratory.com</em>), and an RFID-powered school attendance system currently in production.</p>
       <p>Beyond development, I currently serve as both <strong>IT Instructor</strong> and <strong>IT Manager / Systems Administrator</strong> at Surigao Education Center — teaching web programming, networking, and database systems while managing the school's full network infrastructure.</p>
       <p>In 2026 I was recognized as a <strong>WorldSkills Philippines – Caraga Regional Expert</strong> for IT Software Business (ITSB), reflecting my commitment to international professional standards in software development.</p>
       <p>I am actively seeking <strong>remote and work-from-home opportunities</strong> worldwide — freelance, contract, or full-time.</p>
@@ -693,10 +767,10 @@ footer p{font-size:12px;color:var(--light);font-weight:500}
       <div class="exp-spine"><div class="exp-dot"></div><div class="exp-line"></div></div>
       <div class="exp-body">
         <div class="exp-period">2024</div>
-        <div class="exp-role">Web Developer — OJT / Practicum</div>
-        <div class="exp-org"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>STI COLLEGE, Surigao del Norte</div>
+        <div class="exp-role">Full-Stack Developer — OJT / Practicum</div>
+        <div class="exp-org"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Surigao Education Center, Surigao del Norte</div>
         <ul class="exp-pts">
-          <li>Completed on-the-job training as a web developer while pursuing BS Information Technology</li>
+          <li>Completed on-the-job training as a full-stack developer while pursuing BS Information Technology</li>
           <li>Applied practical skills in web development, database design, and systems deployment</li>
           <li>Gained hands-on experience with Laravel, Vue.js, and MySQL in a production environment</li>
         </ul>
@@ -779,11 +853,11 @@ footer p{font-size:12px;color:var(--light);font-weight:500}
     </div>
     <div class="contact-form">
       <div class="form-row">
-        <div class="field"><label>Your Name</label><input type="text" placeholder="John Smith"></div>
-        <div class="field"><label>Email</label><input type="email" placeholder="john@company.com"></div>
+        <div class="field"><label>Your Name</label><input type="text" id="f-name" placeholder="Full Name"></div>
+        <div class="field"><label>Email</label><input type="email" id="f-email" placeholder="your@company.com"></div>
       </div>
       <div class="field"><label>Project Type</label>
-        <select>
+        <select id="f-type">
           <option value="">Select project type…</option>
           <option>Web Application</option>
           <option>Desktop Application (.NET / WinForms)</option>
@@ -794,8 +868,9 @@ footer p{font-size:12px;color:var(--light);font-weight:500}
           <option>Other</option>
         </select>
       </div>
-      <div class="field"><label>Message</label><textarea placeholder="Tell me about your project, timeline, and budget…"></textarea></div>
-      <button class="btn-send">Send Message <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+      <div class="field"><label>Message</label><textarea id="f-msg" placeholder="Tell me about your project, timeline, and budget…"></textarea></div>
+      <button class="btn-send" onclick="sendMessage()">Send Message <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+<p id="form-note" style="font-size:12px;color:rgba(255,255,255,0.35);margin-top:8px;display:none"></p>
     </div>
   </div>
 </section>
@@ -825,6 +900,46 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
   });
 });
+
+function sendMessage() {
+  const name = document.getElementById('f-name').value.trim();
+  const email = document.getElementById('f-email').value.trim();
+  const type = document.getElementById('f-type').value;
+  const msg = document.getElementById('f-msg').value.trim();
+  const note = document.getElementById('form-note');
+
+  if (!name || !email || !msg) {
+    note.style.display = 'block';
+    note.style.color = '#FCA5A5';
+    note.textContent = 'Please fill in your name, email, and message.';
+    return;
+  }
+
+  // Build mailto link — works without a backend
+  const subject = encodeURIComponent('Project Inquiry from ' + name + (type ? ' — ' + type : ''));
+  const body = encodeURIComponent(
+    'Name: ' + name + '\n' +
+    'Email: ' + email + '\n' +
+    'Project Type: ' + (type || 'Not specified') + '\n\n' +
+    'Message:\n' + msg
+  );
+  const mailto = 'mailto:yancyliquiran2001@gmail.com?subject=' + subject + '&body=' + body;
+
+  window.location.href = mailto;
+
+  note.style.display = 'block';
+  note.style.color = '#6EE7B7';
+  note.textContent = '✓ Opening your email app — message ready to send!';
+
+  // Clear form
+  setTimeout(() => {
+    document.getElementById('f-name').value = '';
+    document.getElementById('f-email').value = '';
+    document.getElementById('f-type').value = '';
+    document.getElementById('f-msg').value = '';
+    setTimeout(() => { note.style.display = 'none'; }, 4000);
+  }, 1000);
+}
 </script>
 </body>
 </html>
