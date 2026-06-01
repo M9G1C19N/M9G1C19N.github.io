@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="Portfolio of Yancy Liquiran, Full-Stack Developer and IT professional from Surigao del Norte, Philippines." name="description"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Yancy Liquiran — Full-Stack Developer</title>
+<title>Yancy Liquiran Full-Stack Developer</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=DM+Serif+Display:ital@0;1&amp;display=swap" rel="stylesheet"/>
 <style>
@@ -436,13 +436,47 @@ footer p{font-size:12px;color:var(--light);font-weight:500}
   footer p:last-child{display:none}
   .btn-send{width:100%;justify-content:center}
 }
-@media(max-width:400px){
-  .hero-h{font-size:30px}
-  .sec-h{font-size:28px}
-  .hero-btns{flex-direction:column}
-  .btn-primary,.btn-outline{width:100%;justify-content:center}
+
+@media(max-width:640px){
+
+  .hero-btns{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    width:100%;
+  }
+
+  .btn-primary,
+  .btn-outline{
+    width:100%;
+    height:auto !important;
+    min-height:auto !important;
+
+    padding:14px 18px !important;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:15px;
+    border-radius:14px;
+
+    line-height:1.2;
+  }
+
 }
 
+@media(max-width:400px){
+
+  .hero-h{
+    font-size:30px;
+  }
+
+  .sec-h{
+    font-size:28px;
+  }
+
+}
 
 /* === 2026 PROFESSIONAL RESPONSIVE + SCROLL ANIMATION UPGRADE === */
 :root{
