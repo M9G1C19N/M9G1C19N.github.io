@@ -12,7 +12,8 @@ const photoStories = [
   { category: 'Festival', title: 'The Color of Celebration', description: 'A smiling performer in an elaborate green-and-gold costume. The radiating headdress and open gesture capture the energy of the celebration.' },
   { category: 'Everyday life', title: 'Care in Small Moments', description: 'A person waters a bed of seedlings with a green watering can. The visible stream of water draws attention to the simple work of tending young plants.' },
   { category: 'Landscape', title: 'Between Two Bridges', description: 'Parallel bridges lead the eye toward greenery beyond the water. Reflections and a cloud-filled sky add depth to the scene.' },
-  { category: 'Festival', title: 'A Street Full of Color', description: 'A performer in a vivid pink costume stands among dancers on a decorated street. Bunting overhead and bold costumes fill the scene with the movement of a parade.' }
+  { category: 'Festival', title: 'A Street Full of Color', description: 'A performer in a vivid pink costume stands among dancers on a decorated street. Bunting overhead and bold costumes fill the scene with the movement of a parade.' },
+  {category: 'Festival', title: 'A Celebration in Gold', description: 'A smiling performer raises a framed portrait above her gold-and-white costume. Behind her, rows of dancers and colorful decorations fill the street with the energy of a celebration.'}
 ];
 
 function enhancePhotographyGallery() {
