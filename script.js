@@ -7,7 +7,7 @@ const photography = [{ src: 'assets/por1.jpg', alt: 'Describe your actual portra
   { src: 'assets/por7.jpg', alt: 'Describe your actual portrait', caption: 'Portraits' },
   { src: 'assets/landscape1.jpg', alt: 'Describe your actual landscape', caption: 'Landscapes' }, { src: 'assets/landscape.jpg', alt: 'Describe your actual landscape', caption: 'Landscapes' }, 
   { src: 'assets/landscape3.jpg', alt: 'Describe your actual landscape', caption: 'Landscapes' },
-  { src: 'assets/landscape4.jpg', alt: 'Describe your actual landscape', caption: 'Landscapes' }, {src: 'assets/festival-gold.jpg', alt: 'A performer in a gold-and-white costume holding a framed portrait above her head, with dancers behind her', caption: 'Festival'}];
+  { src: 'assets/landscape4.jpg', alt: 'Describe your actual landscape', caption: 'Landscapes' }, {src: 'assets/landscape5.jpg', alt: 'A performer in a gold-and-white costume holding a framed portrait above her head, with dancers behind her', caption: 'Festival'}];
 
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('#navigation');
