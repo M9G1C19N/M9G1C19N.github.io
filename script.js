@@ -2,7 +2,10 @@
 // Add your own photographs here after uploading them to the assets folder.
 // Example: { src: 'assets/portrait-01.jpg', alt: 'Portrait in natural light', caption: 'Portraits' }
 const photography = [{ src: 'assets/por1.jpg', alt: 'Describe your actual portrait', caption: 'Portraits' },{ src: 'assets/por2.jpg', alt: 'Describe your actual portrait', caption: 'Portraits' },
-  { src: 'assets/landscape1.jpg', alt: 'Describe your actual landscape', caption: 'Landscapes' }, { src: 'assets/landscape2.jpg', alt: 'Describe your actual landscape', caption: 'Landscapes' }];
+  { src: 'assets/por3.jpg', alt: 'Describe your actual portrait', caption: 'Portraits' },
+  { src: 'assets/landscape1.jpg', alt: 'Describe your actual landscape', caption: 'Landscapes' }, { src: 'assets/landscape.jpg', alt: 'Describe your actual landscape', caption: 'Landscapes' }, 
+  { src: 'assets/landscape3.jpg', alt: 'Describe your actual landscape', caption: 'Landscapes' },
+  { src: 'assets/landscape4.jpg', alt: 'Describe your actual landscape', caption: 'Landscapes' }];
 
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('#navigation');
