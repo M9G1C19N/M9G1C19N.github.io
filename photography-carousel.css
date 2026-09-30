@@ -1,0 +1,17 @@
+/* A scroll-snap gallery preserves native touch and trackpad navigation. */
+.photography-carousel{grid-column:1/-1;min-width:0;width:100%}
+#photo-gallery.photography-track{display:flex;gap:28px;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:var(--blue,#2158c9) transparent;padding:0 0 20px;grid-template-columns:none}
+#photo-gallery .photography-slide{flex:0 0 72%;min-width:0;margin:0;scroll-snap-align:start;scroll-snap-stop:always}
+#photo-gallery .photography-slide:last-child{margin-right:28%}
+#photo-gallery .photography-slide .image-button{width:100%;display:block;background:#e9ebe5;box-shadow:none;border-radius:5px;overflow:hidden;transform:none}
+#photo-gallery .photography-slide img{width:100%;height:490px;aspect-ratio:auto;object-fit:contain;background:#e9ebe5;transition:filter .25s}
+#photo-gallery .photography-slide .image-button:hover img{filter:brightness(1.035)}
+#photo-gallery .photography-slide figcaption{margin-top:23px;padding:0 0 5px;max-width:620px}
+#photo-gallery .photo-category{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue,#2158c9);font-weight:700;margin:0 0 11px}
+#photo-gallery .photography-slide h3{font-size:30px;margin:0 0 12px;line-height:1.15;letter-spacing:-.025em}
+#photo-gallery .photo-description{font-size:14px;line-height:1.7;color:var(--muted,#626962);margin:0}
+.photography-controls{display:flex;align-items:center;justify-content:space-between;gap:20px;border-top:1px solid var(--line,#d9ddd6);padding-top:20px;margin-top:12px}
+.photo-counter{margin:0;font-size:13px;font-variant-numeric:tabular-nums;letter-spacing:.08em;color:var(--muted,#626962)}
+.photo-navigation{display:flex;gap:10px}.photo-navigation button{border:1px solid var(--line,#d9ddd6);background:transparent;border-radius:3px;padding:10px 17px;font-size:12px;color:var(--ink,#202621);transition:background .2s,color .2s}.photo-navigation button:hover:not(:disabled){background:var(--ink,#202621);color:var(--paper,#f8f7f3)}.photo-navigation button:disabled{opacity:.35;cursor:default}
+@media(max-width:700px){#photo-gallery.photography-track{gap:16px}#photo-gallery .photography-slide{flex-basis:90%}#photo-gallery .photography-slide:last-child{margin-right:10%}#photo-gallery .photography-slide img{height:390px}#photo-gallery .photography-slide h3{font-size:25px}.photo-navigation button{padding:10px 12px}#photo-gallery .photo-description{font-size:13px}}
+@media(prefers-reduced-motion:reduce){#photo-gallery.photography-track{scroll-behavior:auto}#photo-gallery img{transition:none}}
