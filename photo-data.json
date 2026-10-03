@@ -1,0 +1,86 @@
+[
+  {
+    "category": "Outdoor portrait",
+    "title": "A Pause in the Countryside",
+    "description": "A portrait on horseback beneath a rustic wooden frame. Soft greenery and a patterned outfit bring color to the quiet outdoor setting.",
+    "src": "assets/por1.jpg",
+    "group": "portraits"
+  },
+  {
+    "category": "Outdoor portrait",
+    "title": "Green Among the Trees",
+    "description": "A green outfit echoes the surrounding foliage in this horseback portrait. The blurred background keeps attention on the subject’s expression.",
+    "src": "assets/por2.jpg",
+    "group": "portraits"
+  },
+  {
+    "category": "Outdoor portrait",
+    "title": "Under the Wooden Frame",
+    "description": "A seated portrait with the horse in the foreground and intersecting wooden branches overhead. The dark floral outfit stands out against the soft green background.",
+    "src": "assets/por3.jpg",
+    "group": "portraits"
+  },
+  {
+    "category": "Beach portrait",
+    "title": "Pink by the Shore",
+    "description": "A bright pink outfit contrasts with the pale shore and blue-gray water. The chair and extended pose create a strong shape against the distant hills.",
+    "src": "assets/por4.jpg",
+    "group": "portraits"
+  },
+  {
+    "category": "Fashion portrait",
+    "title": "Warm Light, Dark Fabric",
+    "description": "A seated portrait in black, framed by a cream upholstered chair. Warm light and the textured backdrop give the image an intimate, dramatic feel.",
+    "src": "assets/por5.jpg",
+    "group": "portraits"
+  },
+  {
+    "category": "Fashion portrait",
+    "title": "Lines and Lace",
+    "description": "An expressive pose in a black lace outfit beside a tall upholstered chair. Raised arms and the woven backdrop bring movement and texture into the frame.",
+    "src": "assets/por6.jpg",
+    "group": "portraits"
+  },
+  {
+    "category": "Fashion portrait",
+    "title": "A Confident Pose",
+    "description": "A black evening outfit against a cream chair and dark rustic backdrop. The raised arm and turned gaze give the portrait a lively, confident character.",
+    "src": "assets/por7.jpg",
+    "group": "portraits"
+  },
+  {
+    "category": "Festival",
+    "title": "The Color of Celebration",
+    "description": "A smiling performer in an elaborate green-and-gold costume. The radiating headdress and open gesture capture the energy of the celebration.",
+    "src": "assets/landscape1.jpg",
+    "group": "festival"
+  },
+  {
+    "category": "Everyday life",
+    "title": "Care in Small Moments",
+    "description": "A person waters a bed of seedlings with a green watering can. The visible stream of water draws attention to the simple work of tending young plants.",
+    "src": "assets/landscape.jpg",
+    "group": "places"
+  },
+  {
+    "category": "Landscape",
+    "title": "Between Two Bridges",
+    "description": "Parallel bridges lead the eye toward greenery beyond the water. Reflections and a cloud-filled sky add depth to the scene.",
+    "src": "assets/landscape3.jpg",
+    "group": "places"
+  },
+  {
+    "category": "Festival",
+    "title": "A Street Full of Color",
+    "description": "A performer in a vivid pink costume stands among dancers on a decorated street. Bunting overhead and bold costumes fill the scene with the movement of a parade.",
+    "src": "assets/landscape4.jpg",
+    "group": "festival"
+  },
+  {
+    "category": "Festival",
+    "title": "A Celebration in Gold",
+    "description": "A smiling performer raises a framed portrait above her gold-and-white costume. Behind her, rows of dancers and colorful decorations fill the street with the energy of a celebration.",
+    "src": "assets/landscape5.jpg",
+    "group": "festival"
+  }
+]

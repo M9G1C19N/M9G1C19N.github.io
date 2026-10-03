@@ -1,0 +1,382 @@
+.comparison-section {
+  padding: 80px 0;
+}
+
+.comparison-note {
+  border-left: 3px solid #b28c62;
+  background: #eee9e1;
+  padding: 16px 20px;
+  font-size: 13px;
+  line-height: 1.65;
+  margin: 24px 0;
+}
+
+.compare-modes,
+.compare-sets {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 18px 0;
+}
+
+.compare-modes button,
+.compare-sets button,
+.compare-controls button {
+  border: 1px solid #b8b1a6;
+  border-radius: 24px;
+  background: transparent;
+  padding: 11px 18px;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+}
+
+.compare-modes [aria-pressed="true"],
+.compare-sets [aria-pressed="true"],
+.compare-controls [aria-pressed="true"] {
+  background: #20251f;
+  color: white;
+}
+
+.comparison-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.comparison-layout > div {
+  width: 100%;
+}
+
+.compare-stage {
+  --split: 50%;
+  position: relative;
+  background: #191b19;
+  overflow: hidden;
+  border-radius: 14px;
+  isolation: isolate;
+  width: 100%;
+  height: 760px;
+  touch-action: pan-y;
+  transition: height 0.3s ease;
+}
+
+.compare-stage.photo-change {
+  animation: comparison-change 0.32s ease;
+}
+
+.compare-stage img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  inset: 0;
+  max-width: none;
+  max-height: none;
+}
+
+.compare-before-layer {
+  position: absolute;
+  inset: 0;
+  clip-path: inset(0 calc(100% - var(--split)) 0 0);
+  pointer-events: none;
+}
+
+.side-mode .compare-before-layer {
+  width: 50%;
+  clip-path: none;
+}
+
+.side-mode #compare-after {
+  left: 50%;
+  width: 50%;
+}
+
+.compare-stage #compare-before.rotated {
+  inset: auto;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+.compare-label {
+  position: absolute;
+  top: 14px;
+  max-width: 43%;
+  background: #000b;
+  color: white;
+  font: 11px/1.5 system-ui;
+  padding: 7px 11px;
+  border-radius: 20px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.compare-label.left {
+  left: 14px;
+}
+
+.compare-label.right {
+  right: 14px;
+}
+
+.compare-line {
+  position: absolute;
+  left: var(--split);
+  height: 100%;
+  width: 2px;
+  background: white;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+.compare-line span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: white;
+  color: #222;
+  box-shadow: 0 3px 20px #0005;
+  font-size: 22px;
+}
+
+.compare-stage input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: ew-resize;
+  z-index: 3;
+}
+
+.side-mode .compare-line,
+.side-mode input {
+  display: none;
+}
+
+.side-mode::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  height: 100%;
+  width: 1px;
+  background: #ffffff26;
+  pointer-events: none;
+}
+
+.compare-stage:focus-within {
+  outline: 3px solid #96754e;
+  outline-offset: 5px;
+}
+
+.compare-controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.compare-fullscreen::before {
+  content: "⛶";
+  margin-right: 7px;
+}
+
+.compare-detail {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 12px 36px;
+  align-items: start;
+  width: 100%;
+  animation: detail-in 0.3s ease;
+}
+
+.compare-detail .eyebrow {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+.compare-detail h3 {
+  font-size: 29px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.compare-detail p {
+  line-height: 1.65;
+  margin: 0;
+}
+
+.compare-tip {
+  grid-column: 2;
+  font-size: 12px;
+  color: #6f7067;
+}
+
+.compare-thumbnails {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 24px 3px 12px;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+}
+
+.compare-thumbnails button {
+  position: relative;
+  flex: 0 0 78px;
+  width: 78px;
+  height: 98px;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  overflow: hidden;
+  padding: 0;
+  background: #252923;
+  cursor: pointer;
+}
+
+.compare-thumbnails [aria-pressed="true"] {
+  border-color: #96754e;
+  outline: 2px solid #96754e;
+  outline-offset: 2px;
+}
+
+.compare-thumbnails img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.compare-thumbnail-number {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  min-width: 25px;
+  padding: 3px 5px;
+  border-radius: 999px;
+  background: #10120fd9;
+  color: #fff;
+  font: 700 10px/1 system-ui;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+
+#comparison:fullscreen,
+#comparison:-webkit-full-screen {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  overflow: auto;
+  padding: 24px clamp(18px, 4vw, 70px);
+  background: #f7f5f0;
+}
+
+#comparison:fullscreen > .section-heading,
+#comparison:-webkit-full-screen > .section-heading {
+  display: none;
+}
+
+#comparison:fullscreen .compare-stage,
+#comparison:-webkit-full-screen .compare-stage {
+  height: min(72vh, 820px) !important;
+}
+
+#comparison:fullscreen .compare-thumbnails,
+#comparison:-webkit-full-screen .compare-thumbnails {
+  padding-bottom: 20px;
+}
+
+@keyframes comparison-change {
+  from {
+    opacity: 0.58;
+    transform: scale(0.997);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes detail-in {
+  from {
+    opacity: 0.3;
+    transform: translateY(7px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .compare-stage.photo-change {
+    animation: none;
+  }
+
+  .compare-thumbnails {
+    scroll-behavior: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .comparison-section {
+    padding-top: 48px;
+  }
+
+  .compare-detail {
+    display: block;
+  }
+
+  .compare-detail h3 {
+    font-size: 24px;
+    margin: 12px 0;
+  }
+
+  .compare-detail p {
+    margin: 9px 0;
+  }
+
+  .compare-controls {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .compare-controls button {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .compare-label {
+    font-size: 9px;
+    max-width: 44%;
+    padding: 6px;
+  }
+
+  .compare-stage {
+    border-radius: 10px;
+  }
+
+  .compare-sets button {
+    font-size: 12px;
+    padding: 10px 12px;
+  }
+
+  #comparison:fullscreen,
+  #comparison:-webkit-full-screen {
+    padding: 14px;
+  }
+
+  #comparison:fullscreen .compare-stage,
+  #comparison:-webkit-full-screen .compare-stage {
+    height: 62vh !important;
+  }
+}
